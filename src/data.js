@@ -8,7 +8,7 @@ export const profile = {
   email: "yashsawant123910@gmail.com",
   phone: "+91 9420383629",
   github: "https://github.com/yashVSawant",
-  linkedin: "https://www.linkedin.com/in/yash-sawant",
+  linkedin: "https://www.linkedin.com/in/yash-sawant-5a2bab271/",
   resumeUrl: "#",
 };
 
@@ -380,4 +380,44 @@ export const nowLearning = [
       "Moving from manual EC2/Nginx deployments toward containerized services with Docker, with early exploration of Kubernetes for orchestration.",
     link: "https://www.docker.com/",
   },
+];
+
+export const allTechStack = [
+  // Languages
+  "JavaScript",
+  "TypeScript",
+
+  // Backend
+  "Node.js",
+  "NestJS",
+  "Express.js",
+  "REST APIs",
+  "Socket.IO",
+
+  // Frontend
+  "React",
+  "Next.js",
+  "Zustand",
+  "Redux",
+  "Tailwind CSS",
+  "HTML5",
+  "CSS3",
+
+  // Databases & ORMs
+  "MySQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Prisma",
+  "Sequelize",
+  "Mongoose",
+
+  // DevOps & Cloud
+  "Docker",
+  "AWS",
+  "Nginx",
+
+  // Tools & Testing
+  "Git",
+  "Postman",
 ];

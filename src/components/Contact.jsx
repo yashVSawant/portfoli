@@ -94,123 +94,110 @@ export function Contact({ profile }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4  items-start">
           {/* Left Column: Contact Cards */}
-          <div className="lg:col-span-5 space-y-4">
-            {/* Email Card with Copy button */}
-            {profile.email && (
-              <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="w-11 h-11 shrink-0 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div className="truncate">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block">
-                      Email Address
-                    </span>
-                    <a
-                      href={`mailto:${profile.email}`}
-                      className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors truncate block text-sm sm:text-base"
-                    >
-                      {profile.email}
-                    </a>
-                  </div>
+          {/* <div className="lg:col-span-4 space-y-4"> */}
+          {/* Email Card with Copy button */}
+          {profile.email && (
+            <div className="lg:col-span-6 space-y-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 overflow-hidden">
+                <div className="w-11 h-11 shrink-0 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
                 </div>
-
-                <button
-                  onClick={handleCopyEmail}
-                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center shrink-0 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors"
-                  aria-label="Copy Email Address"
-                  title="Copy email address"
-                >
-                  {emailCopied ? (
-                    <Check className="w-4 h-4 text-emerald-500" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </button>
-              </div>
-            )}
-
-            {/* Phone Card with Copy button */}
-            {profile.phone && (
-              <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="w-11 h-11 shrink-0 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div className="truncate">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block">
-                      Phone / Mobile
-                    </span>
-                    <a
-                      href={`tel:${profile.phone}`}
-                      className="text-slate-900 dark:text-white font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors truncate block text-sm sm:text-base"
-                    >
-                      {profile.phone}
-                    </a>
-                  </div>
+                <div className="truncate">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block">
+                    Email Address
+                  </span>
+                  <a
+                    href={`mailto:${profile.email}`}
+                    className="text-slate-900 dark:text-white font-medium hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors truncate block text-sm sm:text-base"
+                  >
+                    {profile.email}
+                  </a>
                 </div>
-
-                <button
-                  onClick={handleCopyPhone}
-                  className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center shrink-0 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors"
-                  aria-label="Copy Phone Number"
-                  title="Copy phone number"
-                >
-                  {phoneCopied ? (
-                    <Check className="w-4 h-4 text-teal-500" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </button>
               </div>
-            )}
 
-            {/* Location Card */}
-            {/* <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center gap-3">
-              <div className="w-11 h-11 shrink-0 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block">
-                  Location
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium text-sm sm:text-base">
-                  Mumbai, India (Open to Remote / Hybrid)
-                </span>
-              </div>
-            </div> */}
-
-            {/* Social Media Row */}
-            <div className="pt-2 flex items-center gap-3">
-              {profile.github && (
-                <a
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 py-3 px-4 min-h-[44px] flex items-center justify-center gap-2 rounded-xl text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors text-sm font-semibold"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                  <span>GitHub</span>
-                </a>
-              )}
-              {profile.linkedin && (
-                <a
-                  href={profile.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 py-3 px-4 min-h-[44px] flex items-center justify-center gap-2 rounded-xl text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors text-sm font-semibold"
-                >
-                  <LinkedinIcon className="w-4 h-4 text-emerald-600" />
-                  <span>LinkedIn</span>
-                </a>
-              )}
+              <button
+                onClick={handleCopyEmail}
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center shrink-0 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors"
+                aria-label="Copy Email Address"
+                title="Copy email address"
+              >
+                {emailCopied ? (
+                  <Check className="w-4 h-4 text-emerald-500" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+              </button>
             </div>
+          )}
+
+          {/* Phone Card with Copy button */}
+          {profile.phone && (
+            <div className="lg:col-span-6 space-y-4 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 overflow-hidden">
+                <div className="w-11 h-11 shrink-0 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div className="truncate">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 block">
+                    Phone / Mobile
+                  </span>
+                  <a
+                    href={`tel:${profile.phone}`}
+                    className="text-slate-900 dark:text-white font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors truncate block text-sm sm:text-base"
+                  >
+                    {profile.phone}
+                  </a>
+                </div>
+              </div>
+
+              <button
+                onClick={handleCopyPhone}
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center shrink-0 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors"
+                aria-label="Copy Phone Number"
+                title="Copy phone number"
+              >
+                {phoneCopied ? (
+                  <Check className="w-4 h-4 text-teal-500" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+              </button>
+            </div>
+          )}
+
+          {/* Social Media Row */}
+          <div className="lg:col-span-6 space-y-4 pt-2 flex items-center gap-3">
+            {profile.github && (
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-3 px-4 min-h-[44px] flex items-center justify-center gap-2 rounded-xl text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors text-sm font-semibold"
+              >
+                <GithubIcon className="w-4 h-4" />
+                <span>GitHub</span>
+              </a>
+            )}
           </div>
+          <div className="lg:col-span-6 space-y-4 pt-2 flex items-center gap-3">
+            {profile.linkedin && (
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-3 px-4 min-h-[44px] flex items-center justify-center gap-2 rounded-xl text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-colors text-sm font-semibold"
+              >
+                <LinkedinIcon className="w-4 h-4 text-emerald-600" />
+                <span>LinkedIn</span>
+              </a>
+            )}
+          </div>
+          {/* </div> */}
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+          {/* <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -302,7 +289,7 @@ export function Contact({ profile }) {
                 <span>Send Email Message</span>
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
