@@ -2,9 +2,9 @@ export const profile = {
   name: "Yash Vinod Sawant",
   title: "Full Stack Software Developer",
   tagline:
-    "Web Developer with 2.5+ years of experience building high-performance web applications with JavaScript, TypeScript, React, and Node.js.",
+    "Web Developer with experience building high-performance web applications with JavaScript, TypeScript, React, and Node.js.",
   summary:
-    "Skilled in developing responsive user interfaces, reusable components, and end-to-end features, with a track record of improving performance and reliability across production systems. Experienced in debugging complex issues, translating ambiguous requirements into working solutions, and collaborating across engineering, design, and product teams.",
+    "Full Stack Developer with about 2 years of experience at Vlocity.ai, plus a 1-year internship and training at Sharpener. At Vlocity.ai I work on clickBACON, a restaurant financial management platform, in a team of 4-6 developers. I ship features end to end across React, TypeScript, NestJS and MySQL, from financial dashboard APIs and QuickBooks data mapping to document workflows and automated emails. I have also resolved 400+ production bugs, and I'm comfortable tracing issues across the frontend, backend and database.",
   email: "yashsawant123910@gmail.com",
   phone: "+91 9420383629",
   github: "https://github.com/yashVSawant",
@@ -17,17 +17,25 @@ export const currentProjects = [
     id: "vlocity-dashboard-apis",
     company: "Vlocity.ai",
     role: "Full Stack Software Developer",
-    title: "Restaurant Dashboard Analytics APIs",
+    title: "Restaurant Financial Dashboard",
     type: "feature",
-    problem:
-      "ClickBacon needed a way to surface actual vs. budget financial data across every category and subcategory for a restaurant, but no backend existed to aggregate and serve this data.",
+    requirement:
+      "The core dashboard in ClickBacon, showing a restaurant's budget vs. actual performance, sales and expenses by category and subcategory.",
     solution:
-      "Designed and built the backend APIs powering the dashboard, aggregating category/subcategory-level actual and budget values per restaurant.",
+      "Designed and built all of the backend APIs behind it: budget data, actual data, and the sales and expenses analysis, aggregated per restaurant at category and subcategory level. Also built some of the frontend sections that display this data.",
     impact:
       "Became one of the first major backend features I owned — the foundation for ClickBacon's core financial dashboard.",
-    techStack: ["Node.js", "NestJS", "Prisma", "MySQL", "REST APIs"],
+    techStack: [
+      "Node.js",
+      "NestJS",
+      "Prisma",
+      "MySQL",
+      "REST APIs",
+      "React",
+      "TypeScript",
+    ],
     videoUrl: "",
-    date: "2024",
+    date: "2024", // replace with real month/year
   },
   {
     id: "vlocity-email-template-system",

@@ -1,6 +1,13 @@
-import React from 'react';
-import { Play, Flame, Wrench, Calendar, Building2, TrendingUp } from 'lucide-react';
-import { CardSkeleton } from './CardSkeleton';
+import React from "react";
+import {
+  Play,
+  Flame,
+  Wrench,
+  Calendar,
+  Building2,
+  TrendingUp,
+} from "lucide-react";
+import { CardSkeleton } from "./CardSkeleton";
 
 export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
   if (!currentProjects) {
@@ -8,9 +15,11 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
   }
 
   return (
-    <section id="highlights" className="py-16 md:py-24 border-t border-slate-200/80 dark:border-slate-800/80">
+    <section
+      id="highlights"
+      className="py-16 md:py-24 border-t border-slate-200/80 dark:border-slate-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Heading */}
         <div className="mb-12 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 mb-3">
@@ -20,15 +29,22 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Experience & Engineering Highlights
           </h2>
-          <p className="mt-3 text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
-            Key accomplishments, production features, and optimization systems shipped at Vlocity AI.
+          <p className="mt-3 text-lg text-slate-600 dark:text-slate-400 ">
+            Key accomplishments, production features, and optimization systems
+            shipped at Vlocity AI. Worked on clickBACON platform. ClickBacon is
+            a restaurant financial management platform covering budgets, vendor
+            invoices, accounting integrations and reporting. I work across its
+            React frontend and NestJS backend, shipping features end to end and
+            resolving 400+ production bugs.
           </p>
         </div>
 
         {/* Empty state check */}
         {currentProjects.length === 0 ? (
           <div className="text-center py-12 p-8 rounded-2xl border border-dashed border-slate-300 dark:border-slate-800">
-            <p className="text-slate-500 dark:text-slate-400 font-medium">No experience highlights listed.</p>
+            <p className="text-slate-500 dark:text-slate-400 font-medium">
+              No experience highlights listed.
+            </p>
           </div>
         ) : (
           /* Grid: 1 col on mobile, 2 on tablet, 2 on desktop */
@@ -43,7 +59,8 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
                   <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-3">
                     <span className="flex items-center gap-1.5 font-semibold text-emerald-600 dark:text-emerald-400">
                       <Building2 className="w-3.5 h-3.5" />
-                      {project.company} {project.role ? `• ${project.role}` : ''}
+                      {project.company}{" "}
+                      {project.role ? `• ${project.role}` : ""}
                     </span>
                     {project.date && (
                       <span className="flex items-center gap-1 text-slate-400">
@@ -60,12 +77,12 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
                     </h3>
                     <span
                       className={`shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold border ${
-                        project.type === 'bugfix'
-                          ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
-                          : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
+                        project.type === "bugfix"
+                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20"
+                          : "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20"
                       }`}
                     >
-                      {project.type === 'bugfix' ? (
+                      {project.type === "bugfix" ? (
                         <>
                           <Wrench className="w-3 h-3" /> Optimization
                         </>
@@ -89,6 +106,16 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
                         </p>
                       </div>
                     )}
+                    {project.requirement && (
+                      <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-100 dark:border-slate-800/80">
+                        <span className="font-semibold text-rose-600 dark:text-rose-400 block mb-0.5">
+                          Requirement:
+                        </span>
+                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                          {project.requirement}
+                        </p>
+                      </div>
+                    )}
 
                     {project.solution && (
                       <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-100 dark:border-slate-800/80">
@@ -104,7 +131,8 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
                     {project.impact && (
                       <div className="p-3.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/10 border border-emerald-500/25">
                         <span className="font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 mb-0.5">
-                          <TrendingUp className="w-4 h-4" /> Business & Technical Impact:
+                          <TrendingUp className="w-4 h-4" /> Business &
+                          Technical Impact:
                         </span>
                         <p className="text-slate-800 dark:text-slate-100 font-semibold leading-relaxed">
                           {project.impact}
@@ -132,7 +160,9 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
                   {/* Video Trigger Button (if video exists) */}
                   {project.videoUrl && (
                     <button
-                      onClick={() => onOpenVideo(project.videoUrl, project.title)}
+                      onClick={() =>
+                        onOpenVideo(project.videoUrl, project.title)
+                      }
                       className="w-full min-h-[44px] flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     >
                       <Play className="w-4 h-4 fill-emerald-600 dark:fill-emerald-400" />
@@ -144,7 +174,6 @@ export function CurrentProjects({ currentProjects = [], onOpenVideo }) {
             ))}
           </div>
         )}
-
       </div>
     </section>
   );
